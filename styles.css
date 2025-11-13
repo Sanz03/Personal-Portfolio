@@ -154,8 +154,7 @@ span {
   overflow: hidden;
 }
 .profile-container {
-  cursor: pointer;
-  background-color: var(--white);
+  background: linear-gradient(to bottom, var(--white) 40%, rgb(182, 182, 182));
   border-top-left-radius: 360px;
   border-top-right-radius: 200px;
   border-bottom-left-radius: 400px;
@@ -165,16 +164,17 @@ span {
   width: 600px;
   transform: scale(0.78);
   position: relative;
-  transition: 0.65s ease-out;
+  transition: 0.25s ease-out;
 }
 .profile-image,
 .s-profile-image {
-  cursor: pointer;
   height: 100%;
   width: 100%;
   border-radius: 100px;
   opacity: 0.25;
-  transition: 0.45s ease;
+}
+.profile-image {
+  transition: 0.25s ease-in-out;
 }
 .s-profile-image {
   position: absolute;
@@ -182,6 +182,7 @@ span {
   opacity: 1;
   border-radius: 400px;
   border-top-left-radius: 360px;
+  transition: 0.45s ease;
 }
 .show-button {
   display: flex;
@@ -210,9 +211,13 @@ span {
 .after-s-profile {
   border-radius: 400px;
   transform: translateX(-260px) translateY(-160px) scale(0.45);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
 }
 .after-profile {
   opacity: 1;
+  transform: scale(0.90);
+  border-bottom-left-radius: 700px;
+  border-bottom-right-radius: 180px;
 }
 /*----- SHOWCASE -----*/
 #showcase {
