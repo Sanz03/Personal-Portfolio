@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>San. A - Portfolio</title>
+  
+  <link rel="icon" href="./assets/title-icon.png" type="image/png">
+
+  <link rel="stylesheet" href="./responsive.css">
   <link rel="stylesheet" href="styles.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -22,7 +27,7 @@
   <div id="header">
     <div class="left-section">
       <div class="home-link-container">
-        <a class="home-link" href="#">
+        <a onclick="collapseFooter()" class="home-link" href="#">
           <span class="name-one">S</span>
           <span class="name-two">an. A</span>  
         </a>
@@ -30,7 +35,7 @@
     </div>
     <div class="right-section">
       <ul class="header-links-list">
-        <li><a class="header-links showcase-link" href="#showcase">Showcase</a></li>
+        <li><a onclick="collapseFooter()" class="header-links showcase-link" href="#showcase">Showcase</a></li>
         <li><a class="header-links about-link" href="#about">About</a></li>
       </ul>
     </div>
@@ -40,8 +45,9 @@
 
     <div class="main-left-section">
       <div class="main-details-container">
-        <span class="title">UI UX Developer</span>
+        <span class="role-title">UI UX Developer</span>
         <span class="name">SANJAY ARUN</span>
+        <span class="from">from Karnataka | IN</span>
         <div class="web-links-container">
           <a target="_blank" href="https://www.linkedin.com/in/sanjay-a-347543335" class="web-links">
             <?xml version="1.0" encoding="iso-8859-1"?>
@@ -83,8 +89,10 @@
       <div class="profile-container">
         <p class="show-button">Show</p>
         <div class="profile-content">
-          <img src="./assets/s-profile.jpg" alt="" class="s-profile-image">
-          <img src="./assets/profile.png" alt="my Profile Picture" class="profile-image">
+          <div class="s-profile-container">
+            <img draggable="false" src="./assets/s-profile.png" alt="" class="s-profile-image">
+          </div>
+          <img draggable="false" src="./assets/profile.png" alt="my Profile Picture" class="profile-image">
         </div>
       </div>
     </div>
@@ -92,17 +100,166 @@
   </div>
 
   <div id="showcase">
+    <p class="showcase-heading">Showcase</p>
+    <div id="cards">
+      <div class="card">
+        <div class="card-border"></div>
+        <div class="card-contents">
+          <p class="showcase-title"><span class="first-letter-title">S</span>imple Calculator</p>
+          <div class="description">
+            A minimalistic calculator built with HTML, CSS, and JavaScript, performing basic arithmetic operations with a clean, modern design.
+          </div>
+        </div>
+        <div class="card-link-container"></div>
+      </div>
 
+      <div class="card">
+        <div class="card-border"></div>
+        <div class="card-contents">
+          <p class="showcase-title"><span class="first-letter-title">S</span>imple Chatbot</p>
+          <div class="description">
+            An interactive chatbot built using React, HTML, and CSS, capable of performing simple tasks like flipping a coin, rolling a dice, and showing the current day. Fully responsive for mobile devices.
+          </div>
+        </div>
+        <div class="card-link-container"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-border"></div>
+        <div class="card-contents">
+          <p class="showcase-title"><span class="first-letter-title">Y</span>ouTube Clone</p>
+          <div class="description">
+            A YouTube Home Page clone developed using HTML, CSS, and JavaScript, replicating YouTube’s layout and design aesthetics.
+          </div>
+        </div>
+        <div class="card-link-container"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-border"></div>
+        <div class="card-contents">
+          <p class="showcase-title"><span class="first-letter-title">A</span>mazon Clone</p>
+          <div class="description">
+            A simple Amazon-inspired web page built with HTML, CSS, and JavaScript, showcasing product listings and clean UI structure.
+          </div>
+        </div>
+        <div class="card-link-container"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-border"></div>
+        <div class="card-contents">
+          <p class="showcase-title"><span class="first-letter-title">E</span>-commerce Website</p>
+          <div class="description">
+            A multi-page e-commerce platform created with React, HTML, and CSS, featuring a homepage, checkout, orders, and tracking pages with a responsive layout.
+          </div>
+        </div>
+        <div class="card-link-container"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-border"></div>
+        <div class="card-contents">
+          <p class="showcase-title"><span class="first-letter-title">R</span>ock, Paper, Scissors Game</p>
+          <div class="description">
+            A fun and interactive Rock-Paper-Scissors game built using HTML, CSS, and JavaScript, offering quick gameplay and smooth animations.
+          </div>
+        </div>
+        <div class="card-link-container"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-border"></div>
+        <div class="card-contents">
+          <p class="showcase-title"><span class="first-letter-title">T</span>o do List</p>
+          <div class="description">
+            A simple and responsive to-do list app built using HTML, CSS, and JavaScript, allowing users to add, mark, and delete tasks effortlessly.
+          </div>
+        </div>
+        <div class="card-link-container"></div>
+      </div>
+
+    </div>
   </div>
   <div id="about">
+    <p class="about-heading">About</p>
+      <div class="about-container">
+        <div class="about-me-container">
+        <p class="about-me">
+          A passionate Front-End Developer with a sharp eye for design and detail, I specialize in crafting modern, interactive, and high-performance web experiences using HTML, CSS, JavaScript, and React. I love bridging the gap between creativity and technology—transforming static designs into dynamic, user-centered interfaces that feel alive. My goal? To build digital experiences that look stunning, feel intuitive, and perform flawlessly across every screen.
+        </p>
+      </div>
 
+      <div class="edu-skill-container">
+        <div class="edu-skill-heading">
+          <p onclick="renderTab('skills', event)" class="tab-links skills active-link">Skills</p>
+          <p onclick="renderTab('education', event)" class="tab-links education">Education</p>
+          <p onclick="renderTab('achievements', event)" class="tab-links achievements">Achievements/Certificates</p>
+        </div>
+
+        <div class="skill-contents tab-contents active-tab" id="skills">
+          <ul>
+            <li>Java, JavaScript</li>
+            <li>HTML & CSS</li>
+            <li>mySQL</li>
+            <li>Git & Github</li>
+          </ul>
+        </div>
+
+        <div class="edu-contents tab-contents" id="education">
+          <ul>
+            <li>BE in Computer Science</li>
+            <li>Pre-University</li>
+            <li>SSLC</li>
+          </ul>
+        </div>
+
+        <div class="edu-contents tab-contents" id="achievements">
+          <ul>
+            <li>Application Developer (Web & Mobile) - Rooman Technologies</li>
+            <li>Responsive Web Design - freeCodeCamp</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div onclick="expandFooter()" class="footer">
+      <p class="footer-text">
+        Thanks for scrolling! View the source code on GitHub.
+      </p>
+      <div class="leaving-text-container">
+        <div class="left-leaving-text-container">
+          <p class="built-text">Lovingly designed and developed
+          by <span>Sanjay Arun.</span> ❤️</p>
+        </div>
+        
+        <div class="right-leaving-text-container">
+          <ul>
+            <li>Connect: <a target="_blank" class="footer-links" href="https://www.linkedin.com/in/sanjay-a-347543335">LinkedIn</a>
+          & 
+            <a target="_blank" href="https://github.com/Sanz03" class="footer-links">GitHub</a>
+            </li>
+            <li>Email: <a class="footer-links" target="_blank" href="mailto:sanjay20030306@gmail.com">sanjay20030306@gmail.com</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
   </div>
 
   <script>
+    const leftSection = document.querySelector('.main-left-section')
     const blob = document.querySelector('.profile-container');
     const showButton = document.querySelector('.show-button');
     const sProfile = document.querySelector('.s-profile-image');
-    const profile = document.querySelector('.profile-image')
+    const profile = document.querySelector('.profile-image');
+    const cards = document.querySelectorAll('.card');
+    const tabLinks = document.querySelectorAll('.tab-links');
+    const tabContents = document.querySelectorAll('.tab-contents');
+    const footer = document.querySelector('.footer');
+    const body = document.body;
     
     blob.addEventListener('mousemove', (event) => {
       const target = event.currentTarget;
@@ -115,6 +272,7 @@
     });
 
     showButton.addEventListener('click', () => {
+      sProfile.classList.remove('active-s-profile');
       if (showButton.innerHTML === 'Hide') {
         blob.classList.remove('after-container');
         sProfile.classList.remove('after-s-profile');
@@ -127,6 +285,58 @@
         showButton.innerHTML = 'Hide';
       }
     });
+
+    sProfile.addEventListener('click', () => {
+      if (sProfile.classList.contains('active-s-profile')) {
+        sProfile.classList.remove('active-s-profile');
+      } else {
+        sProfile.classList.add('active-s-profile');
+      }
+    });
+
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', (event) => {
+        const target = event.currentTarget;
+        const rect = target.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        target.style.setProperty("--mouse-x", `${x}px`);
+        target.style.setProperty("--mouse-y", `${y}px`);
+      });
+    });
+
+    function renderTab(tabName, event) {
+      for (const tabLink of tabLinks) {
+        tabLink.classList.remove('active-link');
+      }
+      for (const tabContent of tabContents) {
+        tabContent.classList.remove('active-tab');
+      }
+      event.currentTarget.classList.add('active-link');
+      document.getElementById(tabName).classList.add('active-tab');
+    }
+
+    function expandFooter() {
+      if (footer.classList.contains('active-footer')) {
+        footer.classList.remove('active-footer');
+      } else {
+        footer.classList.add('active-footer');
+      }
+
+      setTimeout( () => {
+        scrollToBottom();
+        footer.scrollTop = footer.scrollHeight;
+      }, 500)
+    }
+
+    function collapseFooter() {
+      footer.classList.remove('active-footer');
+    }
+
+    function scrollToBottom() {
+      document.documentElement.scrollTop = document.documentElement.scrollHeight;
+    }
   </script>
 </body>
 </html>
