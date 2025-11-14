@@ -9,6 +9,9 @@
   --blackTwo: #100f0f;
   --card-color: #181717;
 }
+body, html {
+  overflow-x: hidden;
+}
 html {
   scroll-behavior: smooth;
   overflow-y: scroll;
@@ -19,7 +22,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* outline: 1px solid rgba(255, 0, 0, 0.25); */
+  outline: 1px solid rgba(255, 0, 0, 0.25);
 }
 body {
   background-color: var(--black);
@@ -115,7 +118,7 @@ span {
 .main-details-container {
   margin-bottom: 160px;
 }
-.showcase-title,
+.role-title,
 .name {
   display: block;
 }
@@ -173,10 +176,8 @@ span {
   border-bottom-left-radius: 400px;
   border-bottom-right-radius: 400px;
   margin-bottom: 80px;
-  /* height: 600px;
-  width: 600px; */
-  width: min(65vh, 500px);
-  height: min(65vh, 500px);
+  height: 600px;
+  width: 600px;
   position: relative;
   transform: scale(0.78);
   transition: 0.25s ease-out;
@@ -519,3 +520,4 @@ span {
   font-weight: 700;
   font-size: 1.15rem;
 }
+
