@@ -8,25 +8,26 @@
   --blackTwo: #100f0f;
   --card-color: #181717;
 }
-body, html {
-  overflow-x: hidden;
-}
 html {
   scroll-behavior: smooth;
   overflow-y: scroll;
   scrollbar-width: thin;
+  font-size: 16px;
 }
 * {
-  color: var(--white);
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--ElmsSans);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* outline: 1px solid rgba(255, 0, 0, 0.25); */
+  outline: 1px solid rgba(255, 0, 0, 0.15);
+}
+p {
+  color: var(--white);
 }
 body {
+  padding-top: 40px;
   background-color: var(--black);
-  font-family: var(--ElmsSans);
-  margin-top: 65px;
 }
 a {
   color: var(--white);
@@ -38,3 +39,302 @@ li {
 span {
   color: var(--white);
 }
+
+/*----- HEADER STYLES -----*/
+
+#header {
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  padding: 2rem 1.75rem;
+  max-height: 57px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+.left-section {
+  margin-right: 1.90rem;
+}
+.header-links-list {
+  font-size: 1.25rem;
+  display: flex;
+}
+.showcase-link {
+  margin-right: 1.90rem;
+}
+.name-one,
+.name-one-two {
+  font-family: var(--MrsSheppards);
+}
+.name-one,
+.name-two,
+.name-one-two {
+  font-size: 1.9rem;
+}
+.name-one-two {
+  display: none;
+}
+.showcase-link,
+.about-link {
+  display: inline-block;
+  transition: 0.25s ease;
+}
+.showcase-link:hover,
+.about-link:hover {
+  transform: translateY(6px);
+  color: var(--prime);
+}
+
+@media (max-width: 475px) {
+  .name-one-two {
+    display: inline-block;
+  }
+  .name-one,
+  .name-two {
+    display: none;
+  }
+  .header-links-list {
+    font-size: 0.85rem;
+  }
+  #header {
+    justify-content: space-between;
+    padding: 0.85rem 1.75rem;
+  }
+  .showcase-link:hover,
+  .about-link:hover {
+    transform: translateX(0px);
+    color: var(--white);
+  }
+  .showcase-link:focus,
+  .about-link:focus {
+    color: var(--prime);
+  }
+}
+
+@media (max-width: 900px) {
+  #header {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 2500px) {
+  .header-links-list {
+    font-size: 2.05rem;
+  }
+}
+
+/*----- HOME SECTION -----*/
+#home {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+}
+
+
+/*----- HOME-LEFT SECTION -----*/
+.left-home-section {
+  background-color: var(--black);
+  padding: min(10rem, 18%);
+}
+.role {
+  font-size: clamp(1.15rem, 4vw, 2.10rem);
+}
+.name {
+  font-size: clamp(1.8rem, 6vw, 3.50rem);
+  font-weight: 800;
+}
+.from {
+  font-size: clamp(0.65rem, 2vw, 1.45rem);
+  margin-bottom: 1rem;
+}
+.links {
+  display: flex;
+  align-items: center;
+  font-size: clamp(0.60rem, 2vw, 1.05rem);
+}
+.weblink {
+  margin-right: 0.55rem;
+}
+.web-icon {
+  height: min(22px, 5%);
+  width: min(22px, 5%);
+  min-height: 12px;
+  min-width: 12px;
+  filter: invert(1);
+  margin-right: 0.55rem;
+}
+.weblink:hover {
+  color: var(--prime);
+}
+
+/*----- HOME-RIGHT SECTION -----*/
+.right-home-section {
+  background-color: var(--blackTwo);
+  padding: min(10rem, 18%);
+}
+.profile-container {
+  width: 100%;
+  padding-top: 100%;
+  /* background-color: var(--white); */
+  background: linear-gradient(45deg, var(--prime), var(--white));
+  position: relative;
+  transition: 0.25s ease;
+}
+.profile-image,
+.s-profile-image {
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+.s-profile-image,
+.profile-container {
+  border-radius: 400px;
+  border-top-left-radius: 360px;
+  border-top-right-radius: 160px;
+}
+.s-profile-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-right-radius: 400px;
+  cursor: pointer;
+  transition: 0.45s ease;
+  z-index: 2;
+  transform: scale(0.95) skew(0deg);
+}
+.active-s-image {
+  transform: scale(0.90) skew(-2deg);
+}
+.profile-image {
+  transition: 0.45s ease;
+  opacity: 0.25;
+  border-radius: 40px;
+  z-index: 1;
+  animation: zoom 6s ease-in 0s infinite alternate both;
+}
+.show-hide-profile {
+  opacity: 0.5;
+  z-index: 3;
+  cursor: pointer;
+  border-radius: 0.95rem;
+  position: absolute;
+  padding: 3% 5%;
+  font-size: clamp(0.6rem, 0.8vw, 0.8rem);
+  border: 1px solid var(--prime);
+  left: -15%;
+  top: min(-12%, -10%);
+  text-align: center;
+  transform-origin: left top;
+  transition: 0.25s ease;
+}
+.show-hide-profile:active {
+  opacity: 1;
+}
+.show-hide-profile:hover {
+  color: var(--prime);
+}
+.active-profile-container {
+  border-radius: 400px;
+}
+.active-profile {
+  opacity: 1;
+  border-bottom-left-radius: 460px;
+}
+.active-s-profile-image {
+  cursor: initial;
+  transform: scale(0.45);
+  transform-origin: bottom left;
+  outline: 2px solid var(--prime);
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1.05) skew(0deg);
+  }
+  100% {
+    transform: scale(1.10) skew(-1deg);
+  }
+}
+
+@media (max-width: 475px) {
+  .web-icon {
+    height: 14px;
+    width: 14px;
+  }
+}
+@media (max-width: 700px) {
+  .name {
+    margin-top: 0.35rem;
+    line-height: 100%;
+  }
+}
+@media (max-width:1100px) {
+  /* .show-hide-profile {
+    font-size: 0.65rem;
+  } */
+  #home {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*----- SHOWCASE -----*/
+#showcase {
+  margin-top: 1.25rem;
+  background-color: Var(--black);
+}
+.showcase-page-title {
+  text-align: center;
+  font-size: clamp(0.25rem,6vw, 3.05rem);
+  font-weight: 700;
+  margin-bottom: 1.45rem;
+}
+#cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.05rem;
+  margin: 0.4vw min(10vw, 12%);
+}
+.card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  /* gap: 1.45rem; */
+  border-radius: 0.25rem;
+}
+.card-title {
+  font-weight: 600;
+  text-align: start;
+  font-size: clamp(0.25rem, 2.85vw, 2.05rem);
+}
+.card-title span {
+  font-family: var(--MrsSheppards);
+  margin-right: min(2.85vw, 2%);
+  font-weight: 100;
+  text-shadow: -0.2vw 0.4vw 0px var(--card-color);
+}
+.card-title-container,
+.card-content-container {
+  border-radius: inherit;
+  padding: min(12vw, 4%);
+}
+.card-content {
+  text-align: end;
+  font-size: clamp(0.25rem, 2.55vw, 1.35rem);
+}
+.card-border {
+  display: none;
+}
+
