@@ -146,8 +146,13 @@ span {
   font-size: clamp(1.15rem, 4vw, 2.10rem);
 }
 .name {
+  cursor: pointer;
   font-size: clamp(1.8rem, 6vw, 3.50rem);
   font-weight: 800;
+  transition: 0.25s ease;
+}
+.name:hover {
+  color: var(--prime);
 }
 .from {
   font-size: clamp(0.65rem, 2vw, 1.45rem);
@@ -307,11 +312,12 @@ span {
 }
 
 /*----- SHOWCASE -----*/
-#showcase {
+#showcase,
+#about {
   padding-top: 4.25rem;
   background-color: Var(--black);
 }
-.showcase-page-title {
+.page-title {
   text-align: center;
   font-size: clamp(0.25rem,6vw, 3.05rem);
   font-weight: 700;
@@ -354,7 +360,11 @@ span {
 }
 .card-content {
   text-align: end;
-  font-size: clamp(0.25rem, 2.45vw, 1.15rem);
+}
+.main-title,
+.card-content,
+.tab-contents li {
+  font-size: clamp(0.65rem, 2.45vw, 1.15rem);
 }
 .card-border {
   position: absolute;
@@ -438,4 +448,83 @@ span {
   .card-content-container {
     padding: 10%;
   }
+}
+
+/*----- ABOUT SECTION -----*/
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: 0.25s ease;
+}
+.about-left-section {
+  background-color: var(--blackTwo);
+  padding: min(5vw, 6%) min(10vw, 18%);
+}
+.tab-links {
+  cursor: pointer;
+  font-size: clamp(0.85rem, 1.05rem, 1.15rem);
+  padding: 0.85vw 2vw;
+  position: relative;
+}
+.tab-links::before {
+  content: '';
+  background-color: var(--prime);
+  height: 0.45vh;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transition: 0.25s ease;
+}
+.tab-links.active-link::before {
+  width: 75%;
+}
+.edu-skill-heading {
+  display: flex;
+  justify-content: center;
+}
+.tab-contents {
+  color: var(--white);
+  padding: 2rem;
+  display: none;
+  line-height: 1.65rem;
+}
+.tab-contents.active-tab {
+  display: block;
+}
+
+@media (max-width:900px) {
+  .tab-links {
+    font-size: 0.85rem;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+  .about-me {
+    text-align: center;
+  }
+  .about-left-section {
+    margin-bottom: 2.25rem;
+  }
+  .tab-links {
+    padding: 2vw 2vw;
+  }
+  .tab-contents {
+    text-align: center;
+    padding: 1.05rem;
+    height: 140px;
+  }
+}
+
+@media (max-width: 475px) {
+  .tab-links {
+    font-size: 0.75rem;
+  }
+}
+
+/*----- FOOTER -----*/
+
+.footer-text {
+  padding: 1vw;
+  display: none;
 }

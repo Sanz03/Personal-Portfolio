@@ -185,45 +185,43 @@
     <p class="about-heading">About</p>
       <div class="about-container">
         <div class="about-me-container">
-        <p class="about-me">
+        <p class="about-me main-title">
           A passionate Front-End Developer with a sharp eye for design and detail, I specialize in crafting modern, interactive, and high-performance web experiences using HTML, CSS, JavaScript, and React. I love bridging the gap between creativity and technology—transforming static designs into dynamic, user-centered interfaces that feel alive. My goal? To build digital experiences that look stunning, feel intuitive, and perform flawlessly across every screen.
         </p>
+        </div>
+        <div class="edu-skill-container">
+          <div class="edu-skill-heading">
+            <p onclick="renderTab('skills', event)" class="tab-links skills active-link">Skills</p>
+            <p onclick="renderTab('education', event)" class="tab-links education">Education</p>
+            <p onclick="renderTab('achievements', event)" class="tab-links achievements">Achievements/Certificates</p>
+          </div>
+
+          <div class="skill-contents tab-contents active-tab" id="skills">
+            <ul>
+              <li>Java, JavaScript</li>
+              <li>HTML & CSS</li>
+              <li>mySQL</li>
+              <li>Git & Github</li>
+            </ul>
+          </div>
+
+          <div class="edu-contents tab-contents" id="education">
+            <ul>
+              <li>BE in Computer Science</li>
+              <li>Pre-University</li>
+              <li>SSLC</li>
+            </ul>
+          </div>
+
+          <div class="edu-contents tab-contents" id="achievements">
+            <ul>
+              <li>Application Developer (Web & Mobile) - Rooman Technologies</li>
+              <li>Responsive Web Design - freeCodeCamp</li>
+            </ul>
+          </div>
+
+        </div>
       </div>
-
-      <div class="edu-skill-container">
-        <div class="edu-skill-heading">
-          <p onclick="renderTab('skills', event)" class="tab-links skills active-link">Skills</p>
-          <p onclick="renderTab('education', event)" class="tab-links education">Education</p>
-          <p onclick="renderTab('achievements', event)" class="tab-links achievements">Achievements/Certificates</p>
-        </div>
-
-        <div class="skill-contents tab-contents active-tab" id="skills">
-          <ul>
-            <li>Java, JavaScript</li>
-            <li>HTML & CSS</li>
-            <li>mySQL</li>
-            <li>Git & Github</li>
-          </ul>
-        </div>
-
-        <div class="edu-contents tab-contents" id="education">
-          <ul>
-            <li>BE in Computer Science</li>
-            <li>Pre-University</li>
-            <li>SSLC</li>
-          </ul>
-        </div>
-
-        <div class="edu-contents tab-contents" id="achievements">
-          <ul>
-            <li>Application Developer (Web & Mobile) - Rooman Technologies</li>
-            <li>Responsive Web Design - freeCodeCamp</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
 
     <div onclick="expandFooter()" class="footer">
       <p class="footer-text">
