@@ -133,9 +133,8 @@ span {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
-  background-color: var(--blackTwo);
+  background-color: var(--black);
 }
-
 
 /*----- HOME-LEFT SECTION -----*/
 .left-home-section {
@@ -151,7 +150,7 @@ span {
   font-weight: 800;
   transition: 0.25s ease;
 }
-.name:hover {
+.name:hover {  
   color: var(--prime);
 }
 .from {
@@ -317,6 +316,12 @@ span {
   padding-top: 4.25rem;
   background-color: Var(--black);
 }
+#showcase {
+  background-image: url('./assets/blob-bg-01.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .page-title {
   text-align: center;
   font-size: clamp(0.25rem,6vw, 3.05rem);
@@ -357,6 +362,15 @@ span {
   border-radius: inherit;
   padding: 4%;
   z-index: 2;
+}
+.card-title-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.card-title {
+  flex: 1 1 auto;
 }
 .card-content {
   text-align: end;
@@ -422,7 +436,44 @@ span {
 .card:hover .card-content-container::before {
   opacity: 1;
 }
+.go-to-link {
+  font-size: clamp(0.75rem, 1.25vw, 2.05rem);
+  flex-shrink: 0;
+  margin-left: 2rem;
+}
+.go-to-link:hover {
+  color: var(--prime);
+}
 
+@media (max-width:475px) {
+  .go-to-link {
+    display: none;
+  }
+  .card:hover .card-content-container {
+    display: block;
+  }
+
+  .card:hover .card-title {
+    color: var(--prime);
+  }
+  #cards {
+    grid-template-columns: 1fr;
+  }
+  .card-title-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card:hover .go-to-link {
+    display: block;
+    font-size: clamp(0.25rem, 2.65vw, 2.05rem);
+  }
+  .card-title {
+    text-align: center;
+  }
+  .card:hover .card-title {
+    text-align: start;
+  }
+}
 @media (max-width:700px) {
   .card-title span {
     font-family: var(--ElmsSans);
@@ -434,21 +485,11 @@ span {
   #cards {
     gap: 0.45rem;
   }
-  .card-title-container,
-  .card-content-container {
-    padding: 12%;
-  }
   .card-content {
     text-align: start;
   }
 }
 
-@media (max-width: 900px) {
-  .card-title-container,
-  .card-content-container {
-    padding: 10%;
-  }
-}
 
 /*----- ABOUT SECTION -----*/
 .about-container {
@@ -492,6 +533,9 @@ span {
 .tab-contents.active-tab {
   display: block;
 }
+.tab-contents ul li span {
+  font-weight: 800;
+}
 
 @media (max-width:900px) {
   .tab-links {
@@ -512,7 +556,7 @@ span {
   .tab-contents {
     text-align: center;
     padding: 1.05rem;
-    height: 140px;
+    height: 200px;
   }
 }
 
